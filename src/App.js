@@ -56,7 +56,7 @@ function App() {
       <ThemeProvider theme={themeMode}>
         <CursorOrdinary />
 
-        <AnimatePresence initial={false} exitBeforeEnter>
+        <AnimatePresence  exitBeforeEnter>
 
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<SharedLayout />} >
