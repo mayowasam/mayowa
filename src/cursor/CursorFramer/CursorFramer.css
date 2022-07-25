@@ -1,0 +1,32 @@
+.cursor__content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: yellow;
+    cursor: none;
+}
+.title{
+    font-size: 10rem;
+    font-weight: bold;
+}
+
+.cursor{
+    width: 32px;
+    height: 32px;
+    /* width: 3rem;
+    height: 3rem; */
+    background: black;
+    border-radius: 50%;
+
+    /* without this there will be an overflow of the page */
+    position: fixed; 
+    top:0;
+    left:0;
+    /* mix-blend-mode: difference; */
+
+
+/* when i enter the text on mouseEnter i will be moving up an down */
+pointer-events: none;
+
+}
