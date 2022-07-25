@@ -1,4 +1,3 @@
-import image1 from '../assets/water-sm.jpg'
 import spotify from '../assets/spotify.png'
 import spotifysmall from '../assets/spotifysmall.png'
 import friendsmall from '../assets/friendsmall.png'
