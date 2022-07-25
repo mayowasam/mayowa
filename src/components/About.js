@@ -1,6 +1,8 @@
 import styled, { keyframes } from "styled-components"
 import { motion } from 'framer-motion'
-import image from '../assets/image12.jpg'
+// import image from '../assets/image12.jpg'
+import may1 from '../assets/may1.jpg'
+import may2 from '../assets/may2.jpg'
 import { staggerVariant, fadeYVariant, letterAnimation, bannerVariant } from '../utils/Variants'
 import { useEffect, useRef } from "react"
 import gsap from 'gsap'
@@ -148,10 +150,19 @@ transform: rotate(15deg) !important;
 clip-path:  ellipse(40% 50% at 50% 50%);
 background-size: cover;
 background-repeat: no-repeat;
-background-position: center center;
+background-position: top top;
 background-color: transparent;
 transition: all 1s cubic-bezier(.91, 1, .22, 1) ease-in-out;
-background-image: url(${image});
+
+&.img1{   
+    background-image: url(${may1});
+
+}
+
+&.img2{
+    background-image: url(${may2});
+
+}
 
 @media (max-width: 1100px){
     width: 80%;
@@ -407,7 +418,7 @@ export default function About() {
 
                 <Profile>
                     <Box>
-                        <Image></Image>
+                        <Image className="img1"></Image>
                     </Box>
                     <Box>
                         <p ref={aboutRef} className={`about ${reveal && "is-reveal"} `}>
@@ -459,7 +470,7 @@ export default function About() {
                     
                     </Box>
                     <Box>
-                        <Image></Image>
+                        <Image className="img2"></Image>
                     </Box>
 
                 </Profile>
