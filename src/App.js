@@ -54,7 +54,7 @@ function App() {
       <CustomCursorManager>
       <GlobalStyles />
       <ThemeProvider theme={themeMode}>
-        <CursorOrdinary />
+        {window.innerWidth > 1200 && <CursorOrdinary />}
 
         <AnimatePresence  exitBeforeEnter>
 

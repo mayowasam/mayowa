@@ -33,22 +33,6 @@ flex-wrap: nowrap;
   
 
 }
-
-@media (max-width: 700px){
-
-
-    .active{
-
-
-        .smallimage{
-            width: 40%;
-            height:30%;
-        }
-    }
-   
-
-}
-
   
 
 `
@@ -59,37 +43,34 @@ width:100vw;
 height:100vh;
 position: relative;
 background: ${({ theme }) => theme.body};
+// border: 2px solid red;
+
 
 a{
     color: ${({ theme }) => theme.main};
-
     position: absolute;
     width: 40%;
     height:80%;
     top:15%;
     left: 20%;
     opacity: .8;
-    // border: 2px solid red;
+    // border: 2px solid yellow;
 
     &:hover{
         opacity: 1;
     }
 }
 
-@media (max-width: 1100px){
-    a{
-        width: 70%;
-        height:60%;
-        left: 10%;
-    }
-
-}
 
 @media (max-width: 700px){
+
     a{
-        width: 80%;
-        height:60%;
-        left: 10%;
+        top:13%;
+        bottom: unset;
+        left: unset;
+        width: 100%;
+        height:100%;
+        padding: 0 1rem;
 
     }
 
@@ -100,9 +81,7 @@ const BigImage = styled(motion.div)`
 width: 100%;
 height:100%;
 z-index: 1;
-// transform: scale(.8);
 clip-path: inset(100% 0% 0% 0%); 
-// clip-path: inset(0% 0% 0% 0%); 
 transition: all 1.5s cubic-bezier(0.77, 0, 0.175, 1);
 
 
@@ -112,11 +91,8 @@ img{
     object-fit: cover;
 }
 
-
-
 @media (max-width: 700px){
-    width: 100%;
-    height:100%;
+    z-index: unset;
 
 }
 
@@ -142,9 +118,8 @@ img{
     object-fit: cover;
 }
 
-@media (max-width: 700px){
-    width: 40%;
-    height:40%;
+@media (max-width: 320px){
+ display: none;
 
 }
 
@@ -160,21 +135,18 @@ z-index: 2;
 // color:${props => props.primary ? props.theme.main : ""};
 
 h1{
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-transform: uppercase;
     font-weight: 300;
 
 }
 
 @media (max-width: 700px){
-    top:10%;
-    left: 30%;
-
-    h1{
-        font-size: 3rem;
-     
-    }
-
+    top:40%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
 }
 
 `
@@ -209,70 +181,44 @@ left: 0%;
 z-index: 3;
 width: 15rem;
 height: 15rem;
-// overflow: hidden; 
-// border:2px solid blue;
 
 
 
 
- text { 
-    fill: ${({ theme }) => theme.text};
-    font-size: .9rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: .5em;
-    font-weight: bold; 
-}
+
+    text { 
+        fill: ${({ theme }) => theme.main};
+        font-size: 1rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: .5em;
+    }
 
 
-svg { 
-    width: 100%; 
-    height: 100%;
-   
-}
-
-@media (max-width: 960px){
-    bottom: 0%;
-    left: 0%;
-    width: 15rem;
-    height: 15rem;
+    svg { 
+        width: 100%; 
+        height: 100%;
     
-    
-}
+    }
 
-@media (max-width: 700px){
-bottom: 0%;
-left: 0%;
-width: 10rem;
-height: 10rem;
+    // @media (max-width: 960px){
+    //     bottom: 0%;
+    //     left: 0%;
+    //     width: 15rem;
+    //     height: 15rem;
+        
+        
+    // }
 
-
-}
-
-`
-
-const Arrow = styled.div`
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
-z-index: 10;
-color: ${({ theme }) => theme.text};
-
-svg{
-    font-size: 3rem;
-    // stroke-width: .5;
-}
-
-@media (max-width: 700px){
-    svg{
-        font-size: 2rem;
+    @media (max-width: 700px){
+        width: 10rem;
+        height: 10rem;
 
     }
 
-}
-
 `
+
+
 export default function Work() {
     const [scroll, setScroll] = useState(false)
     console.log(scroll);
@@ -370,11 +316,11 @@ export default function Work() {
                     <defs>
                         <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
                     </defs>
-                    <circle cx="50%" cy="50%" r="50" fill={scroll ? "#FEAD01" : "#728639"} />
+                    <circle cx="50%" cy="50%" r="50" fill="none" />
                     <g>
                         <use xlinkHref="#circlePath" fill="none" />
                         <text>
-                            <textPath xlinkHref="#circlePath">   {!scroll ? `scroll down  scroll down` : "scroll up  scroll up"}</textPath>
+                            <textPath xlinkHref="#circlePath">   {!scroll ? `scroll up  scroll up` : "scroll down  scroll down"}</textPath>
 
                         </text>
                     </g>

@@ -28,7 +28,7 @@ export const staggerVariant = {
 
     animate: {
         transition: {
-            staggerChildren: .04,
+            staggerChildren: .4,
             staggerDirection: -1
         }
 

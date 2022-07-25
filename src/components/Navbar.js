@@ -12,7 +12,7 @@ const Navcontainer = styled(motion.nav)`
 width:100%;
 position: fixed;
 top:0;
-padding: .5rem 2rem;
+padding: 1rem 2rem;
 display: grid;
 grid-template-columns: 1fr 2fr 1fr;
 align-items:center;
@@ -20,6 +20,7 @@ color: ${({ theme }) => theme.text};
 background: transparent;
 z-index: 3;
 // border: 2px solid red;
+
 
 @media (max-width: 700px){
     padding: 1rem;
@@ -29,11 +30,7 @@ z-index: 3;
 
 const Link = styled(NavLink)`
     color: ${({ theme }) => theme.text};
-    // border: 2px solid blue;
-
-    // @media (max-width: 700px){
-
-    // }
+  
 
 `
 
@@ -41,7 +38,6 @@ const NavList = styled(motion.ul)`
 justify-content: center;
 display: flex;
 list-style: none;
-// border: 2px solid blue;
 
 
 `
@@ -52,6 +48,7 @@ padding: .5rem;
 a{
     color: ${({ theme }) => theme.text};
     text-transform: uppercase;
+    font-size: 1rem;
 
 }
 
@@ -60,9 +57,10 @@ a{
     border-bottom: 2px solid ${({ theme }) => theme.text};
 }
 
-@media (max-width: 700px){
+@media (max-width: 320px){
     a{
-        font-size: .6rem;
+        font-size: .8rem;
+
     }
  
 }
@@ -83,15 +81,14 @@ justify-content: space-between;
 `
 const Time = styled(motion.div)`
 @media (max-width: 700px){
-    // font-size: .6rem;
 
     display: none;
+
 }
 
 `
 const Theme = styled(motion.div)`
 cursor: pointer;
-// border: 2px solid red;
 font-size: 1.5rem;
 
 

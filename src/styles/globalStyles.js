@@ -6,11 +6,11 @@ export const LightTheme = {
 
   // body: '#d4cec9',
   body: '#ebece6',
+  // body: '#fff',
   text: '#010101',
   grey: '#7D7F7B',
   main: '#FEAD01', 
-  // default: '#CC6743'
-  default: '#1B2431'
+  default: '#3a4750',
 }
 
 
@@ -22,7 +22,8 @@ export const DarkTheme = {
   main: '#FEAD01',
   grey: '#7D7F7B',
   // default:"#1B2431",
-  default:"#3F012C"
+  // default:"#3F012C",
+  default:"#323232"
 }
 
 

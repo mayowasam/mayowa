@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 import Girl from '../assets/video.mp4'
-
+import { motion } from 'framer-motion'
+import { letterVariant, staggerVariant, fadeYVariant } from '../utils/Variants'
 
 const Videocontainer = styled.div`
 position: relative;
@@ -18,7 +19,7 @@ video{
 
 `
 
-const BigText = styled.div`
+const BigText = styled(motion.div)`
 // border: 5px solid red;
 display: flex;
 flex-direction: column;
@@ -39,46 +40,64 @@ h1{
 
 @media (max-width: 700px){
     width: 80%;
-
     h1{
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 }
 
 
 `
 
-const SmallText = styled.div`
+const SmallText = styled(motion.div)`
 position: absolute;
-width: 20%;
-height: 100px;
+max-width: 20%;
 text-align: justify;
 left:4%;
-bottom: 2%;
+bottom: 4%;
 color: white;
-// border: 2px solid red;
+
 p{
     line-height: 1.5em;
     font-weight: 300;
-    font-size: .9rem;
+    font-size: 1rem;
 }
 
-@media (max-width: 1100px){
-    width: 30%;
-    height: 100px;
-
+@media (max-width: 1200px){
+ 
+    max-width: 30%;
+    padding: 1rem;
+    left: unset;
 }
 
 @media (max-width: 700px){
-    width: 80%;
-    height: 100px;
-    bottom: 15%;
-
+    bottom: unset;
+    top: 70%;
+    max-width: 100%;
+    padding: 1rem;
+    left: unset;
 }
+
+@media (max-width: 375px){
+    bottom: unset;
+    top: 63%;
+    max-width: 100%;
+    padding: 1rem;
+    left: unset;
+
+ }
+ @media (max-width: 320px){
+    bottom: unset;
+    top: 65%;
+    max-width: 100%;
+    padding: 1rem;
+    left: unset;
+
+ }
+
 
 `
 
-const ClickHere = styled.div`
+const ClickHere = styled(motion.div)`
 position: absolute;
 border: 1px solid white;
 border-radius:100%;
@@ -102,9 +121,9 @@ a{
 @media (max-width: 700px){
     a{
        
-        width: 4rem;
-        height: 4rem;
-        font-size: .6rem;
+        width: 5rem;
+        height: 5rem;
+        font-size: .8rem;
     
     }
    
@@ -114,13 +133,12 @@ a{
 `
 
 
-const BottomLeft = styled.div`
+const BottomLeft = styled(motion.div)`
 position: absolute;
 width: 7rem;
 height: 7rem;
 right: 5%;
 bottom: 10%;
-// transform: translateY(-50%);
 display: flex;
 align-items: center;
 justify-content: center;
@@ -133,16 +151,13 @@ a{
 }
 
 @media (max-width: 700px){
-    // border: 2px solid red;
-    width: 5rem;
-    height: 3rem;
-    bottom: 2%;
+    bottom: 5%;
 
-    a{
-        
-        font-size: .8rem;
-    
-    }
+
+}
+
+@media (max-width: 320px){
+    bottom: 0%;
 
 }
 
@@ -152,31 +167,52 @@ a{
 
 export default function Home() {
     return (
-        <div >
+        <>
             <Videocontainer>
                 <video src={Girl} muted loop type="video/mp4" autoPlay />
 
             </Videocontainer>
-            <BigText>
-                <h1>Mayowa</h1>
-                <h1>Awoyomi</h1>
+            <BigText
+                variants={staggerVariant}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+            >
+                <motion.h1 variants={fadeYVariant("up")}>Mayowa</motion.h1>
+                <motion.h1 variants={fadeYVariant("up")}>Awoyomi</motion.h1>
             </BigText>
+
             <SmallText>
-                <p>
-                    I am a full-stack software developer, based in Ibadan, Nigeria. 
+                <motion.p
+                    variants={fadeYVariant("up")}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                >
+                    I am a full-stack software developer, based in Ibadan, Nigeria.
                     I am passionate about helping brands position themselves effectively by creating unique digital experience on the web.
-                </p>
+                </motion.p>
             </SmallText>
 
-            <ClickHere>
+            <ClickHere
+                variants={letterVariant}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+            >
                 <Link to="/work">Explore works</Link>
             </ClickHere>
 
-            <BottomLeft>
+            <BottomLeft
+                variants={letterVariant}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+            >
                 <Link to="/about">Read More</Link>
             </BottomLeft>
 
 
-        </div>
+        </>
     )
 }
