@@ -18,7 +18,13 @@ grid-template-columns: repeat(2, 1fr);
 @media (max-width: 700px){
     grid-template-columns: 1fr;
     padding: 4rem 1rem;
-    gap: 2rem;
+    // gap: 2rem;
+
+    .boxtwo{
+        justify-content: flex-start;
+
+
+    }
 
 }
 `
@@ -158,53 +164,15 @@ position: relative;
 
 
 
-    @media (max-width: 1100px){
-        padding 2rem 1rem;
-        .about{
-            padding 1rem;
-  
-        }
-
-        .content{
-            .contactUs{
-                left:unset;
-                right: 0%;
-                // top: 20%;
-                width: 4rem;
-                height: 4rem;
-            }
-        }
-    }
-
-    @media (max-width: 1100px){
-        padding 2rem 1rem;
-        .about{
-            padding 1rem;
-
-            div{
-font-size: .7rem;
-            }
-  
-        }
-
-        .content{
-            .contactUs{
-                left:unset;
-                right: 0%;
-                top: 20%;
-                width: 4rem;
-                height: 4rem;
-            }
-        }
-    }
-
-    
-
+   
+   
 
 @media (max-width: 700px){
     flex-direction: column;
-    padding: 1rem 0;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2rem;
+    padding: unset;
+
     
     p{
         div{
@@ -220,22 +188,6 @@ font-size: .7rem;
     .content{
         gap: 1rem;
 
-        p{
-            font-size: .7rem;
-        }
-    
-        span{
-            font-size: 1.1rem;
-        }
-
-        .handles{
-            
-                a{
-                font-size: .8rem;
-                
-
-            }
-        }
 
         .contactUs{
             left:unset;
@@ -288,7 +240,7 @@ export default function Contact() {
                 </p>
 
             </Box>
-            <Box>
+            <Box className="boxtwo">
                 <div className="content">
 
                     <div className="email">
