@@ -77,6 +77,61 @@ export const fadeYVariant = (direction = "up" | "down") => ({
 
 })
 
+export const aboutYVariant = (direction = "up" | "down") => ({
+    initial: {
+        y: direction === "up" ? 40 : -60,
+        opacity: 0
+
+    },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            ease: "easeInOut"
+        }
+
+    },
+
+    exit: {
+        y: direction === "up" ? 40 : -60,
+        opacity: 0,
+        transition: {
+            // delay: -3,
+            duration: 1,
+            ease: "easeInOut"
+        }
+    }
+
+})
+
+
+export const aboutXVariant = (direction = "left" | "right") => ({
+    initial: {
+        opacity: 0,
+        x: direction === "left" ? 40 : -60,
+
+    },
+    animate: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            ease: "easeInOut"
+        }
+
+    },
+    exit: {
+        x: direction === "left" ? 40 : -60,
+        opacity:0,
+        transition: {
+            duration: 1,
+            ease: "easeInOut"
+        }
+    }
+
+})
+
 export const fadeXVariant = (direction = "left" | "right") => ({
     initial: {
         opacity: 0,
@@ -111,13 +166,18 @@ export const letterVariant = {
     animate: {
         scale: 1,
         transition: {
-            delay: 1.5,
             duration: 2,
             ...modelTransition
         }
 
     },
     exit: {
+        scale: 0,
+        transition: {
+            duration: 1,
+            ease:"easeInOut"
+            // ...modelTransition
+        }
 
     }
 }
@@ -125,14 +185,23 @@ export const letterVariant = {
 
 export const letterAnimation = {
     initial: {
-        y: 400,
+        scale: .5,
 
     },
     animate: {
-        y: 0,
+        scale: 1,
+        opacity:1,
         transition: {
             ease: [0.6, 0.01, -0.05, 0.95],
             duration: 2
+        }
+    },
+    exit: {
+        scale: .5,
+        opacity: 0,
+        transition: {
+            ease: [0.6, 0.01, -0.05, 0.95],
+            duration: 1
         }
     }
 }
@@ -204,5 +273,37 @@ export const pathVariants = {
             ease: "easeInOut"
 
         }
+    },exit: {
+        pathLength: 0,
+        opacity: 0,
+        
+     }
+    
+}
+
+export const textVariant = {
+    initial:{
+        y: 0, 
+        opacity: 0, 
+        staggerChildren: .2,
+    },
+    animate:{
+        y: -10, 
+        opacity: 1, 
+        transition:{
+            duration: 1, 
+            staggerChildren: .2,
+
+        },
+        color: "red" 
+    },
+    exit:{
+        y: 0, 
+        opacity: 0, 
+        transition:{
+            duration: 1, 
+            staggerChildren: .4,
+
+        },
     }
 }

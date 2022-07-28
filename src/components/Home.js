@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import styled from "styled-components"
 import Girl from '../assets/video.mp4'
 import { motion } from 'framer-motion'
-import { letterVariant, staggerVariant, fadeYVariant } from '../utils/Variants'
+import { letterVariant, staggerVariant, fadeYVariant, fadeXVariant } from '../utils/Variants'
 
 const Videocontainer = styled.div`
 position: relative;
@@ -204,7 +204,7 @@ export default function Home() {
             </ClickHere>
 
             <BottomLeft
-                variants={letterVariant}
+                variants={fadeXVariant("right")}
                 initial="initial"
                 animate="animate"
                 exit="exit"

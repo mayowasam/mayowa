@@ -3,6 +3,8 @@ import gsap from 'gsap'
 import SplitText from "../utils/Split3.min";
 import { useEffect, useRef } from "react";
 import useOnScreen from '../utils/useOnScreen'
+import { motion } from 'framer-motion'
+import { staggerVariant,aboutYVariant, fadeXVariant, letterVariant } from '../utils/Variants'
 
 const ContactContainer = styled.div`
 width:100%;
@@ -106,7 +108,7 @@ position: relative;
         position: relative;
 
         p{
-            font-size: .8rem;
+            font-size: 1rem;
         }
 
         span{
@@ -162,7 +164,17 @@ position: relative;
         }
     }
 
-
+    @media (max-width: 1024px){
+      
+    
+        .content{
+            .contactUs{
+                left:unset;
+                right: 5%;
+            }
+        
+        }
+    }
 
    
    
@@ -186,12 +198,10 @@ position: relative;
     }
 
     .content{
-        gap: 1rem;
-
-
         .contactUs{
             left:unset;
             right: 0;
+            top: -20%;
             width: 4rem;
             height: 4rem;
         }
@@ -241,33 +251,50 @@ export default function Contact() {
 
             </Box>
             <Box className="boxtwo">
-                <div className="content">
+                <motion.div className="content"
+                    variants={staggerVariant}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                >
 
-                    <div className="email">
-                        <p>Email</p>
-                        <span>mayowaawoyomi@gmail.com</span>
-                    </div>
+                    <motion.div className="email"
+                        variants={aboutYVariant("down")}
+                    >
+                        <motion.p >Email</motion.p>
+                        <motion.span>mayowaawoyomi@gmail.com</motion.span>
+                    </motion.div>
 
-                    <div className="email">
+                    <motion.div className="email"
+                        variants={letterVariant}
+
+                    >
                         <p>Phone</p>
                         <span>+234 809 077 0290</span>
-                    </div>
+                    </motion.div>
 
-                    <div className="handles">
-                        <a href="/">Twitter</a>
-                        <a href="https://www.linkedin.com/in/mayowa-awoyomi-6a8a9b133/">LinkedIn</a>
-                        <a href="https://github.com/mayowasam">Github</a>
-                    </div>
+                    <motion.div className="handles"
+                        variants={staggerVariant}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                    >
+                        <motion.a variants={aboutYVariant("down")} href="/">Twitter</motion.a>
+                        <motion.a variants={aboutYVariant("down")} href="https://www.linkedin.com/in/mayowa-awoyomi-6a8a9b133/" target="_blank" rel="noreferrer">LinkedIn</motion.a>
+                        <motion.a variants={aboutYVariant("down")} href="https://github.com/mayowasam" target="_blank" rel="noreferrer">Github</motion.a>
+                    </motion.div>
 
-                    <div className="contactUs">
+                    <motion.div
+                        variants={fadeXVariant("right")}
+                        className="contactUs">
                         <a href="mailto:mayowaawoyomi@gmail.com">
                             <span>Drop me </span>
                             <span>an email</span>
 
                         </a>
 
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
 
 

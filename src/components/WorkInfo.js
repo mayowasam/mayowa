@@ -5,6 +5,7 @@ import { data } from './workdata'
 import { useMemo } from "react"
 import { Github, } from "../utils/svg"
 import { AiOutlineArrowLeft } from 'react-icons/ai'
+import { modelTransition, staggerVariant, fadeYVariant, letterVariant, fadeXVariant } from '../utils/Variants'
 
 
 const WorkContainer = styled.div`
@@ -12,11 +13,10 @@ width:100%;
 height:100vh;
 background: ${({ theme }) => theme.body};
 color: ${({ theme }) => theme.text};
-padding: 4rem 3rem 0;
+padding: 4rem 2rem 0;
 
-@media (max-width: 700px){
-    padding: 4rem 1rem;
-    height: unset;
+@media (max-width: 912px){
+    padding: 4rem 1rem 0;
 
 }
 
@@ -47,7 +47,7 @@ position: relative;
 
 
 
-@media (max-width: 700px){
+@media (max-width: 912px){
     grid-template-columns: 1fr;
     gap: unset;
 
@@ -56,18 +56,10 @@ position: relative;
 
 
 `
-const Back = styled.div`
+const Back = styled(motion.div)`
 position: absolute;
-// width: 5rem;
-// height: 5rem;
 top: 2%;
-// border: 1px solid ${({ theme }) => theme.text};
-// border-radius: 100%;
-// box-shadow: 3px 3px 3px ${({ theme }) => theme.text};
-// display: flex;
-// align-items: center;
-// justify-content: center;
-
+z-index: 8;
 a{
     padding: 2rem;
     display: inline-block;
@@ -98,17 +90,10 @@ grid-template-rows: 1fr 1.5fr;
 
 
 
-@media (max-width: 700px){
+@media (max-width: 912px){
     display: block;
     position: relative;
-
-
-   
-    // display:unset;
-    // width: 100%;
-    // height: 100%;
-
-
+    padding: 1rem 0;
 
 }
 
@@ -123,7 +108,7 @@ grid-template-rows: 1.5fr 1fr;
 
 
 
-@media (max-width: 700px){
+@media (max-width: 912px){
     grid-template-rows: 1fr 1fr;
  
 
@@ -132,23 +117,24 @@ grid-template-rows: 1.5fr 1fr;
 
 `
 
-const NameContainer = styled.div`
+const NameContainer = styled(motion.div)`
 width:100%;
 height: 100%;
 // border: 2px solid white;
 display: grid;
 padding: 2rem 0;
 
-@media (max-width: 700px){
-    position:absolute;
 
+
+@media (max-width: 912px){
+    position:absolute;
 
 }
 
 
 `
 
-const Name = styled.h1`
+const Name = styled(motion.h1)`
 font-size: 5rem;
 font-weight: 300;
 text-transform: uppercase;
@@ -156,18 +142,18 @@ line-height: .8em;
 
 &:nth-of-type(1){
     justify-self: center;
-    // border: 2px solid green;
-
 }
 
 &:nth-of-type(2){
     justify-self: end;
-    // border: 2px solid blue;
+}
 
+@media (max-width: 912px){
+    align-self: center;
 
 }
 
-@media (max-width: 700px){
+@media (max-width: 320px){
     font-size: 2.5rem;
     font-weight: 600;
 
@@ -199,11 +185,11 @@ justify-content: center;
 text-align: justify;
 padding:0 3rem;
 line-height: 2em;
+font-size: 1rem;
 // border: 2px solid green;
 
-@media (max-width: 700px){
-    padding:1rem;
-    font-size: 1rem;
+@media (max-width: 320px){
+    padding:unset;
 
 }
 
@@ -213,14 +199,14 @@ line-height: 2em;
 const Bottom = styled.div`
 padding: 0 3rem;
 
-@media (max-width: 700px){
+@media (max-width: 320px){
     padding: 0;
 
 }
 
 `
 
-const Built = styled.ul`
+const Built = styled(motion.ul)`
 display:flex;
 flex-wrap: wrap;
 color: ${props => props.theme.main};
@@ -232,7 +218,7 @@ li{
 }
 
 
-@media (max-width: 700px){
+@media (max-width: 320px){
     // padding:0 2rem;
     margin 2rem
 
@@ -244,7 +230,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 2rem;
-margin-top: 2rem;
+margin: 2rem 0;
 
 
     a{
@@ -326,76 +312,97 @@ export default function WorkInfo() {
 
     // console.log('Info', Info);
     return (
-            <WorkContainer >
+        <WorkContainer >
 
-                <WorkContent>
+            <WorkContent>
 
-                    <Back>
-                        <Link to="/work"> <AiOutlineArrowLeft/></Link>
-                    </Back>
+                <Back
+                 variants={fadeXVariant("right")}
+                 initial="initial"
+                 animate="animate"
+                 exit="exit">
+                    <Link to="/work"> <AiOutlineArrowLeft /></Link>
+                </Back>
 
-                    <Box>
-                        <NameContainer>
-                            <Name>{Info.name.split(" ")[0]}</Name>
-                            {Info.name.split(" ")[1] && <Name>{Info.name.split(" ")[1]}</Name>}
-                        </NameContainer>
-                        <Image
-                            initial={{
-                                // x:100, 
-                                // width:"150%"
-                            }}
-                            animate={{
-                                transition: {
-                                    duration: 2,
-                                    ease: "easeInOut"
-                                }
-                            }}>
-                            <img src={Info.bigImage} alt="" />
-                        </Image>
-                    </Box>
+                <Box>
+                    <NameContainer
+                        variants={staggerVariant}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                    >
+                        <Name
+                            variants={fadeYVariant("down")}
+                        >{Info.name.split(" ")[0]}</Name>
+                        {Info.name.split(" ")[1] && <Name
+                            variants={fadeYVariant("up")}
+                        >{Info.name.split(" ")[1]}</Name>}
+                    </NameContainer>
+                    <Image>
+                        <motion.img 
+                        initial={{
+                            width:0,
+                        }}
+                        animate={{
+                            width: "100%",
+                            transition: modelTransition
+                        }}
+                        src={Info.bigImage} alt="" />
+                    </Image>
+                </Box>
 
-                    <BoxTwo>
-                        <Description >
-                            <p>
-                              {Info.description}
-                            </p>
-                        </Description>
+                <BoxTwo>
+                    <Description >
+                        <motion.p   variants={fadeYVariant("up")}
+                         initial="initial"
+                         animate="animate"
+                         exit="exit">
+                            {Info.description}
+                        </motion.p>
+                    </Description>
 
-                        <Bottom>
-                            <Built>
-                                {Info.built.length > 0 && Info.built.map((d, id) => (
-                                    <li key={id}>{d}</li>
+                    <Bottom>
+                        <Built
+                         variants={staggerVariant}
+                         initial="initial"
+                         animate="animate"
+                         exit="exit"
+                         >
+                            {Info.built.length > 0 && Info.built.map((d, id) => (
+                                <motion.li 
+                                variants={letterVariant}
+                                key={id}>{d}</motion.li>
 
 
-                                ))
-                                }
-                            </Built>
+                            ))
+                            }
+                        </Built>
 
-                            <Address>
-                                <a href={`${Info.githubLink}`} target="_blank" rel="noreferrer">
-                                    <Github width="30" height="30" fill="currentColor" /> 
-                                    Github
+                        <Address>
+                            <a href={`${Info.githubLink}`} target="_blank" rel="noreferrer">
+                                <Github width="30" height="30" fill="currentColor" />
+                                Github
+
+                            </a>
+
+                            <button>
+                                <a href={`${Info.siteLink}`} target="_blank" rel="noreferrer">
+                                    Visit
 
                                 </a>
+                            </button>
 
-                                <button>
-                                    <a href={`${Info.siteLink}`} target="_blank" rel="noreferrer">
-                                        Visit
+                        </Address>
 
-                                    </a>
-                                </button>
+                    </Bottom>
 
-                            </Address>
-
-                        </Bottom>
-
-                    </BoxTwo>
+                </BoxTwo>
 
 
 
-                </WorkContent>
+            </WorkContent>
 
-            </WorkContainer>
+        </WorkContainer>
 
     )
 }

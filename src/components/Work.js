@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { useState, useEffect, createRef, useRef } from "react"
-import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
+import { fadeXVariant } from '../utils/Variants'
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -118,7 +118,7 @@ img{
     object-fit: cover;
 }
 
-@media (max-width: 320px){
+@media (max-width: 700px){
  display: none;
 
 }
@@ -174,7 +174,7 @@ h1{
 
 
 
-const Scroll = styled.div`
+const Scroll = styled(motion.div)`
 position: fixed;
 bottom: 5%;
 left: 0%;
@@ -264,6 +264,7 @@ export default function Work() {
             xPercent: -100 * (sections.length - 1),
             ease: "none",
             scrollTrigger: {
+                id: "work",
                 trigger: ".work",
                 pin: true,
                 scrub: true,
@@ -285,6 +286,7 @@ export default function Work() {
 
         sections.forEach((sct, i) => {
             ScrollTrigger.create({
+                id: "set",
                 trigger: sct,
                 start: () => 'top top-=' + (sct.offsetLeft - window.innerWidth / 2) * (maxWidth / (maxWidth - window.innerWidth)),
                 end: () => '+=' + sct.offsetWidth * (maxWidth / (maxWidth - window.innerWidth)),
@@ -293,11 +295,17 @@ export default function Work() {
             });
         });
 
+        ScrollTrigger.refresh()
 
         return () => {
             ScrollTrigger.getAll().forEach(t => {
                 t.kill()
             })
+
+
+            // ScrollTrigger.getById("work").kill(true)
+            // ScrollTrigger.getById("set").kill(true)
+
         }
 
 
@@ -319,10 +327,14 @@ export default function Work() {
                     <circle cx="50%" cy="50%" r="50" fill="none" />
                     <g>
                         <use xlinkHref="#circlePath" fill="none" />
-                        <text>
+                        <motion.text
+                        variants={fadeXVariant("right")}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit">
                             <textPath xlinkHref="#circlePath">   {!scroll ? `scroll up  scroll up` : "scroll down  scroll down"}</textPath>
 
-                        </text>
+                        </motion.text>
                     </g>
                 </svg>
 

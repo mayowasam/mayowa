@@ -4,7 +4,7 @@ import { useStateVal } from "../Paths"
 import { motion } from 'framer-motion'
 import { useMemo, useState } from "react"
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs'
-import { staggerVariant, fadeYVariant, fadeXVariant, svgVariants, pathVariants } from '../utils/Variants'
+import { staggerVariant, fadeYVariant, fadeXVariant, pathVariants } from '../utils/Variants'
 
 
 
@@ -122,6 +122,7 @@ export default function Navbar() {
                 variants={staggerVariant}
                 initial="initial"
                 animate="animate"
+                exit="exit"
             >
                 <Link to="/">
                     <motion.svg
