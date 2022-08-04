@@ -10,11 +10,24 @@ import errand from '../assets/errand4.png'
 import errand1 from '../assets/errand3.png'
 import note1 from '../assets/note3.png'
 import note2 from '../assets/note7.png'
+import youtube from '../assets/youtube1.png'
+import youtube2 from '../assets/youtube2.png'
 
 
 export const data = [
     {
         id: 1,
+        name: "Mtube",
+        bigImage: youtube,
+        smallImage: youtube2,
+        githubLink: "https://github.com/mayowasam/youtube",
+        siteLink: "https://mayowa-youtube.herokuapp.com/",
+        description: "A Youtube clone which allows you to upload videos, subscribe to channels, like videos, search for videos and more.",
+        built: ["React", "NodeJs", "Express", "Redux Toolkit", "Firebase", "Styled-Components"]
+
+    },
+    {
+        id: 2,
         name: "spotify",
         bigImage: spotify,
         smallImage: spotifysmall,
@@ -25,7 +38,7 @@ export const data = [
 
     },
     {
-        id: 2,
+        id: 3,
         name: "friends",
         bigImage: friendsmall,
         smallImage: friends,
@@ -36,7 +49,7 @@ export const data = [
 
     },
     {
-        id: 3,
+        id: 4,
         name: "Connect",
         bigImage: social,
         smallImage: social,
@@ -47,7 +60,7 @@ export const data = [
 
     },
     {
-        id: 4,
+        id: 5,
         name: "Notes",
         bigImage: note1,
         smallImage: note2,
@@ -58,8 +71,8 @@ export const data = [
 
     },
     {
-        id: 5,
-        name: "Tourist App",
+        id: 6,
+        name: "Location",
         bigImage: tourist,
         smallImage: map2,
         githubLink: "https://github.com/mayowasam/Attraction",
@@ -69,7 +82,7 @@ export const data = [
 
     },
     {
-        id: 6,
+        id: 7,
         name: "IbErrands",
         bigImage: errand1,
         smallImage: errand,
@@ -81,7 +94,7 @@ export const data = [
     },
 
     {
-        id: 7,
+        id: 8,
         name: "Mayowa's Website",
         bigImage: old,
         smallImage: old,

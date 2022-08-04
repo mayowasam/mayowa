@@ -203,7 +203,7 @@ export default function Navbar() {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: .9 }}>
                         <a
-                            href="https://drive.google.com/file/d/1K0RZ93Y8UIgduwmNm_Jm-sfC7wWiwG6_/view?usp=drivesdk" target="_blank"
+                            href="https://drive.google.com/file/d/1LngiUVars6BpM5xDtL0Pp5lKjOpwB0BR/view?usp=drivesdk" target="_blank"
                             rel="noreferrer">
                             Resume
                         </a>
