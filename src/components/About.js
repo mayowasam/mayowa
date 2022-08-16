@@ -496,15 +496,12 @@ div{
 
 .designed{
     text-align: center;
-    p{
-
-    }
-
-    span{
+    a{
         color: ${({ theme }) => theme.main};
         font-size: 1.1rem;
         font-weight: 700;
         margin-left: .2rem;
+        text-decoration: none;
     }
 
 }
@@ -515,7 +512,7 @@ div{
     // margin: 0;
 
     .designed{
-        span{   
+        a{   
             font-size: 1rem;
             font-weight: 400;
         }
@@ -675,7 +672,7 @@ export default function About() {
 
     useLayoutEffect(() => {
         if (!creater.current) return;
-        console.log("running");
+        // console.log("running");
         ScrollTrigger.refresh()
 
         gsap.timeline({
@@ -694,12 +691,12 @@ export default function About() {
 
 
         let trigger = ScrollTrigger.getById("myID")
-        console.log({ trigger });
+        // console.log({ trigger });
 
 
         return () => {
             trigger && trigger.kill()
-            console.log("clean up");
+            // console.log("clean up");
 
 
         }
@@ -982,7 +979,12 @@ export default function About() {
                     </div>
 
                     <div className="designed">
-                        <p className="li"> Photographer:<span>viktuer the grapher</span></p>
+                        <p className="li"> Photographer:
+                        <motion.a 
+                        whileHover={{scale: 1.3}}
+                        whileTap={{scale: .9}}
+                        href="https://www.instagram.com/viktuer/" target="_blank" rel="noreferrer">viktuer</motion.a>
+                        </p>
                     </div>
                 </Footer>
 
