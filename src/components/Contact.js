@@ -280,7 +280,7 @@ export default function Contact() {
                         exit="exit"
                     >
                         <motion.a variants={aboutYVariant("down")} href="/">Twitter</motion.a>
-                        <motion.a variants={aboutYVariant("down")} href="https://www.linkedin.com/in/mayowa-awoyomi-6a8a9b133/" target="_blank" rel="noreferrer">LinkedIn</motion.a>
+                        <motion.a variants={aboutYVariant("down")} href="https://www.linkedin.com/in/mayowa-awoyomi" target="_blank" rel="noreferrer">LinkedIn</motion.a>
                         <motion.a variants={aboutYVariant("down")} href="https://github.com/mayowasam" target="_blank" rel="noreferrer">Github</motion.a>
                     </motion.div>
 
