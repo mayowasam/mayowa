@@ -189,7 +189,7 @@ export default function Home() {
                     animate="animate"
                     exit="exit"
                 >
-                    I am a full-stack software developer, based in Ibadan, Nigeria.
+                    I am a software developer, based in Lagos, Nigeria.
                     I am passionate about helping brands position themselves effectively by creating unique digital experience on the web.
                 </motion.p>
             </SmallText>
