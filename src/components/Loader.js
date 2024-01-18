@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import window from '../assets/window-1.jpg'
+// import window from '../assets/window-1.jpg'
+import window from '../assets/window.png'
 // import window from '../assets/window-2-bg.png'
 import { motion } from 'framer-motion'
 import { MainVariant, staggerVariant, fadeYVariant, fadeXVariant, letterVariant } from '../utils/Variants'
