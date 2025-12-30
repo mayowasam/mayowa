@@ -791,10 +791,9 @@ export default function About() {
                         <BoxTwoText className="text">
                             <motion.h2 variants={aboutYVariant("down")}>Hi,</motion.h2>
                             <motion.p variants={aboutYVariant("up")}>
-                                I'm <span>Mayowa</span>, a full-stack developer. I have spent the past 4 years creating products for different arrays of client.
-                                I enjoy creating cool things that live on the internet. I want to help make the web better for everyone.
-                                If your company is working on a product that makes people's lives better in any aspect and in any way and you need someone to help you make that digital experience inclusive and accessible,
-                                I would love to help you. I want to make a difference.
+                                I'm <span>Mayowa</span>, a full-stack Engineer. With 5+ years product development experience, building secure, scalable, accessible applications across startups and enterprise environments. 
+                                I am a proven expert in user-centric design principles, API development, System design and modern Cloud-native tooling. 
+                                I am skilled in data science fundamentals, including data analysis, machine learning, and data visualization. 
                             </motion.p>
 
                         </BoxTwoText>
@@ -819,10 +818,10 @@ export default function About() {
                     <Frameworks>
                         <div className="marquee">
                             <p>
-                                JAVASCRIPT TYPESCRIPT CSS REACT NEXTJS NODEJS EXPRESS MONGODB GRAPHQL DOCKER AWS tPRC SOCKET.IO STYLED-COMPONENTS GSAP FRAMER-MOTION &nbsp; &nbsp;
+                                JAVASCRIPT TYPESCRIPT PYTHON TAILWIND CSS REACT NEXTJS NODEJS NESTJS EXPRESS SQL POSTGRESQL MONGODB GRAPHQL DOCKER AWS GCP TERRAFORM KUBERNETES ANSIBLE NGINX REDIS tPRC SOCKET.IO STYLED-COMPONENTS GSAP FRAMER-MOTION &nbsp; &nbsp;
                             </p>
                             <p>
-                                JAVASCRIPT TYPESCRIPT CSS REACT NEXTJS NODEJS EXPRESS MONGODB GRAPHQL DOCKER AWS tPRC SOCKET.IO STYLED-COMPONENTS GSAP FRAMER-MOTION &nbsp; &nbsp;
+                                JAVASCRIPT TYPESCRIPT PYTHON TAILWIND CSS REACT NEXTJS NODEJS NESTJS EXPRESS SQL POSTGRESQL MONGODB GRAPHQL DOCKER AWS GCP TERRAFORM KUBERNETES ANSIBLE NGINX REDIS tPRC SOCKET.IO STYLED-COMPONENTS GSAP FRAMER-MOTION &nbsp; &nbsp;
                             </p>
                         </div>
                     </Frameworks>
@@ -887,28 +886,28 @@ export default function About() {
                     <div className="skills"
 
                     >
-                        <Skill
-
-                        >
+                        <Skill>
                             <li className="li">Javascript</li>
                             <li className="li">TypeScript</li>
+                            <li className="li">Python</li>
                             <li className="li">NodeJs</li>
                             <li className="li">React</li>
                             <li className="li">Next.Js</li>
+                            <li className="li">NestJs</li>
                             <li className="li">GraphQL</li>
+                             <li className="li">Linux</li>
                             <li className="li">GIT</li>
                            
-
-
-
 
                         </Skill>
 
                         <Skill
                         >
                             <li className="li">Redux Toolkit</li>
-                            <li className="li">MongoDb</li>
-                            <li className="li">PostgreSQL</li>
+                            <li className="li">SQL</li>
+                             <li className="li">PostgreSQL</li>
+                             <li className="li">GitHub Actions</li>
+                             <li className="li">MongoDb</li>
                             <li className="li">Socket.io</li>
                             <li className="li">Styled-components</li>
                             <li className="li">Docker</li>
@@ -919,12 +918,16 @@ export default function About() {
                         </Skill>
 
                         <Skill>
-                            <li className="li">AWS</li>                            
-                            <li className="li">Sass</li>
+                            <li className="li">AWS</li> 
+                             <li className="li">GCP</li>  
+                             <li className="li">Terraform</li>  
+                            <li className="li">Kubernetes</li>
+                             <li className="li">Ansible</li>  
                             <li className="li">Heroku</li>
                             <li className="li">Firebase</li>
                             <li className="li">Vercel</li>
-                            
+                            <li className="li">Jupyter Notebook</li>
+                            <li className="li">Sckit Learn</li>
                         </Skill>
                     </div>
 
