@@ -270,7 +270,7 @@ export default function Contact() {
 
                     >
                         <p>Phone</p>
-                        <span>+234 809 077 0290</span>
+                        <a href="+447500519931">+44 75005 19931</a>
                     </motion.div>
 
                     <motion.div className="handles"
@@ -279,7 +279,7 @@ export default function Contact() {
                         animate="animate"
                         exit="exit"
                     >
-                        <motion.a variants={aboutYVariant("down")} href="/">Twitter</motion.a>
+                        // <motion.a variants={aboutYVariant("down")} href="/">Twitter</motion.a>
                         <motion.a variants={aboutYVariant("down")} href="https://www.linkedin.com/in/mayowa-awoyomi" target="_blank" rel="noreferrer">LinkedIn</motion.a>
                         <motion.a variants={aboutYVariant("down")} href="https://github.com/mayowasam" target="_blank" rel="noreferrer">Github</motion.a>
                     </motion.div>
